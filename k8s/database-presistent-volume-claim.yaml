@@ -1,0 +1,17 @@
+# not an actual storage instance - going to be attached to pod config
+# kubernetes will look for storage static or dynamic 
+# readWriteOnce - single node at a time 
+# ReadOnlyMany
+# ReadWriteMany
+#
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: database-persistent-volume-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+                                                  
